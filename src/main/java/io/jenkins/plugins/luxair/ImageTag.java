@@ -82,7 +82,7 @@ public class ImageTag {
         Unirest.config().reset();
         Unirest.config().enableCookieManagement(false).interceptor(errorInterceptor);
         String headerValue = Unirest.get(url).asEmpty()
-            .getHeaders().getFirst("Www-Authenticate");
+            .getHeaders().getFirst("Www-Authenticate".toLowerCase());
         Unirest.shutDown();
 
         String type = "";
